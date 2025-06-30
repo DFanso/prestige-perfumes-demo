@@ -220,6 +220,26 @@
     }
 }
 
+/* Navbar improvements */
+#navbar {
+    transition: all 0.3s ease;
+}
+
+/* Ensure navbar is always on top */
+#navbar {
+    z-index: 999;
+}
+
+/* Mobile menu overlay */
+#mobileMenuOverlay {
+    z-index: 1000;
+}
+
+/* Mobile menu panel */
+#mobileMenu {
+    z-index: 1001;
+}
+
 /* Brand slider animation */
 @keyframes slide {
     from {
