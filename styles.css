@@ -166,4 +166,26 @@
 
 .animate-slide:hover {
     animation-play-state: paused;
+}
+
+/* Logo slider fade effect */
+.logo-slider-container::before,
+.logo-slider-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.logo-slider-container::before {
+    left: 0;
+    background: linear-gradient(to right, #F9FAFB, transparent);
+}
+
+.logo-slider-container::after {
+    right: 0;
+    background: linear-gradient(to left, #F9FAFB, transparent);
 } 
