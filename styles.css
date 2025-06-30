@@ -149,6 +149,77 @@
     }
 }
 
+/* Additional mobile optimizations */
+@media (max-width: 640px) {
+    /* Prevent horizontal scroll */
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    /* Better touch targets */
+    button, a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Adjust floating elements on mobile */
+    .animate-float {
+        animation: none;
+    }
+    
+    /* Simplify animations on mobile for better performance */
+    .parallax {
+        background-attachment: scroll;
+    }
+    
+    /* Improve readability */
+    p {
+        line-height: 1.6;
+    }
+    
+    /* Better spacing for mobile */
+    section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+    /* Adjust grid layouts */
+    .grid {
+        gap: 1.5rem;
+    }
+}
+
+/* Fix for iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    /* iOS specific fixes */
+    .fixed {
+        -webkit-transform: translateZ(0);
+    }
+}
+
+/* Improved mobile menu */
+@media (max-width: 1023px) {
+    /* Ensure mobile menu is full height */
+    #mobileMenu {
+        height: 100vh;
+        height: -webkit-fill-available;
+    }
+    
+    /* Better mobile menu transitions */
+    .translate-x-full {
+        transform: translateX(100%);
+    }
+    
+    /* Smooth scrolling on mobile */
+    html {
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
 /* Brand slider animation */
 @keyframes slide {
     from {
