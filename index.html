@@ -77,6 +77,16 @@
                     <a href="#contact" class="hover:text-gray-300 transition-colors duration-300">Contact</a>
                 </div>
                 
+                <!-- Men and Women Buttons -->
+                <div class="hidden md:flex items-center space-x-4" id="genderButtons">
+                    <button class="px-6 py-2 bg-black text-white font-semibold rounded-full hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 gender-btn">
+                        Men
+                    </button>
+                    <button class="px-6 py-2 bg-black text-white font-semibold rounded-full hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 gender-btn">
+                        Women
+                    </button>
+                </div>
+                
                 <div class="flex items-center space-x-4">
                     <button class="hover:text-gray-300 transition-colors duration-300">
                         <i class="fas fa-search"></i>
@@ -397,12 +407,26 @@
         // Navbar background change on scroll
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
+            const genderButtons = document.querySelectorAll('.gender-btn');
+            
             if (window.scrollY > 100) {
                 navbar.classList.add('bg-black', 'bg-opacity-95', 'text-white');
                 navbar.classList.remove('bg-opacity-90', 'bg-white', 'text-black');
+                
+                // Update Men/Women buttons for dark navbar
+                genderButtons.forEach(button => {
+                    button.classList.remove('bg-black', 'text-white', 'hover:bg-gray-800');
+                    button.classList.add('bg-white', 'text-black', 'hover:bg-gray-200');
+                });
             } else {
                 navbar.classList.add('bg-white', 'bg-opacity-90', 'text-black');
                 navbar.classList.remove('bg-black', 'bg-opacity-95', 'text-white');
+                
+                // Update Men/Women buttons for light navbar
+                genderButtons.forEach(button => {
+                    button.classList.remove('bg-white', 'text-black', 'hover:bg-gray-200');
+                    button.classList.add('bg-black', 'text-white', 'hover:bg-gray-800');
+                });
             }
         });
 
